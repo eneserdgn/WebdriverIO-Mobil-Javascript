@@ -3,8 +3,8 @@ let d = (new Date()).toLocaleString('tr-TR', {timeZone: 'Europe/Istanbul'});
 
 config.capabilities = [
     {
-        build: `User Android Journey - ${d}`,
-        app: 'storage:filename=app-debug.apk',
+        build: `Android Acceptance Test - ${d}`,
+        app: 'storage:filename=Faladddin.apk',
         platformName: "Android",
         platformVersion: "Android 9",
         deviceName: 'Samsung_Galaxy_S9_Plus_real',
@@ -15,8 +15,8 @@ config.capabilities = [
 ];
 
 
-config.user = 'oauth-enes.erdogan-83e09';
-config.key = 'e324c5f9-bf08-4e9e-99a2-a0b03be8e961';
+config.user = '';
+config.key = '';
 config.protocol = 'https';
 config.hostname = 'ondemand.eu-central-1.saucelabs.com';
 config.path = '/wd/hub';

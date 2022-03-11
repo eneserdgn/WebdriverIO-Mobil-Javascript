@@ -1,8 +1,6 @@
 const merge = require("deepmerge");
 const wdioConf = require("../wdio.shared.conf");
 
-
-
 exports.config = merge(wdioConf.config, {
     cucumberOpts: {
         tagExpression: '',

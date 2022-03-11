@@ -4,14 +4,14 @@ const wdioConf = require("../wdio.shared.conf");
 
 exports.config = merge(wdioConf.config, {
     cucumberOpts: {
-        tagExpression: '@Deneme',
+        tagExpression: '',
         timeout: 300000,
     },
     waitforTimeout: 40000,
-    maxInstances: 2,
-    logLevel: 'info',
-    bail: 0,
-    specFileRetries: 0,
+    maxInstances: 5,
+    logLevel: 'silent',
+    bail: 1,
+    specFileRetries: 2,
 
     beforeScenario: async (world) => {
         try {

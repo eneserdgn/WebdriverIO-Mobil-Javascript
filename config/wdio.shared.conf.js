@@ -3,7 +3,7 @@ const rimraf = require("rimraf");
 const allure = require("allure-commandline");
 const wdioParallel = require('wdio-cucumber-parallel-execution');
 
-const sourceSpecDirectory = `./src/User/features`;
+const sourceSpecDirectory = `./src/features`;
 let tmpSpecDirectory = `${sourceSpecDirectory}/tmp`;
 let featureFilePath = `${tmpSpecDirectory}/*.feature`;
 
@@ -23,7 +23,7 @@ exports.config = {
             }],
         ],
     cucumberOpts: {
-        require: ['./src/**/step-definitions/*.js'],
+        require: ['./src/step-definitions/*.js'],
         backtrace: false,
         requireModule: [],
         dryRun: false,

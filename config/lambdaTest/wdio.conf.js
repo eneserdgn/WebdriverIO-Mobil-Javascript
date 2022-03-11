@@ -8,10 +8,10 @@ exports.config = merge(wdioConf.config, {
         timeout: 300000,
     },
     waitforTimeout: 40000,
-    maxInstances: 1,
+    maxInstances: 5,
     logLevel: 'silent',
-    bail: 0,
-    specFileRetries: 0,
+    bail: 1,
+    specFileRetries: 2,
 
     beforeScenario: async (world) => {
         try {
