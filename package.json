@@ -1,20 +1,52 @@
 {
-  "name": "webdriverio-mobil-javascript",
+  "name": "user-webdriverioarchitecture",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "User team journey tests with WebdriverIO",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test:localAndroid": "./node_modules/.bin/wdio ./config/browserStack/wdio.android.conf.js",
+    "test:localiOS": "./node_modules/.bin/wdio ./config/browserStack/wdio.android.conf.js",
+    "test:browserstack": "./node_modules/.bin/wdio ./config/browserStack/wdio.android.conf.js",
+    "test:sauceLabsAndroid": "./node_modules/.bin/wdio ./config/sauceLabs/wdio.android.conf.js",
+    "test:sauceLabsiOS": "./node_modules/.bin/wdio ./config/sauceLabs/wdio.android.conf.js",
+    "test:lambdatest": "./node_modules/.bin/wdio ./config/lambdaTest/wdio.android.conf.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/eneserdgn/WebdriverIO-Mobil-Javascript.git"
+  "dependencies": {
+    "@wdio/cli": "^7.12.6",
+    "allure-commandline": "^2.13.8",
+    "axios": "^0.24.0",
+    "deepmerge": "^4.2.2",
+    "lodash": "^4.17.21",
+    "minimist": "^1.2.5",
+    "rimraf": "^3.0.2",
+    "wdio-cucumber-parallel-execution": "^3.6.15",
+    "webdriver": "^7.16.9",
+    "yargs": "^17.3.0"
+  },
+  "devDependencies": {
+    "@wdio/allure-reporter": "^7.16.3",
+    "@wdio/appium-service": "^7.16.3",
+    "@wdio/browserstack-service": "^7.16.3",
+    "@wdio/crossbrowsertesting-service": "^7.16.14",
+    "@wdio/cucumber-framework": "^7.16.3",
+    "@wdio/local-runner": "^7.16.3",
+    "@wdio/sauce-service": "^7.16.13",
+    "@wdio/spec-reporter": "^7.16.3",
+    "browserstack-local": "^1.4.8",
+    "chai": "^4.3.4",
+    "country-emoji": "^1.5.6",
+    "cucumber-html-reporter": "^5.5.0",
+    "expect-webdriverio": "^3.1.4"
   },
   "keywords": [],
-  "author": "",
+  "author": "Enes Erdogan",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/eneserdgn/WebdriverIO-Mobil-Javascript/issues"
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/modanisatech/customer/loyant/loyalty-mobile-journey.git"
   },
-  "homepage": "https://github.com/eneserdgn/WebdriverIO-Mobil-Javascript#readme"
+  "bugs": {
+    "url": "https://gitlab.com/modanisatech/customer/loyant/loyalty-mobile-journey/issues"
+  },
+  "homepage": "https://gitlab.com/modanisatech/customer/loyant/loyalty-mobile-journey#readme"
 }
