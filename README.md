@@ -5,22 +5,22 @@
 
 ### 💻 Project Tree
 
-.
-├── allure-report               # index.html dosyası ile Raporu görüntülüyoruz
-├── config                      
-│   ├── browserStack            # BrowserStackte paralel koşmak için
-│   ├── lambdaTest              # Lambdatestte paralel koşmak için
-│   ├── local                   # Localimizde testleri koşmak için
-│   ├── localParallel           # Localimizde paralel koşmak için
-│   ├── sauceLabs               # Saucelabste paralel koşmak için
-│   └── wdio.shared.conf.js     # Genel configurasyonlarımız
-├── src                         
-│   ├── common                  
-│   ├── ├── ElementHelper       # Yardımcı sınıfımız
-│   ├── features                # Testlerimizin bulunduğu klasör
-│   ├── pages                   # POM
-│   └── stepDefinitions         # Cucumber steplerimizin bulunduğu klasör
-└── ...
+    .
+    ├── allure-report               # index.html dosyası ile Raporu görüntülüyoruz
+    ├── config                      
+    │   ├── browserStack            # BrowserStackte paralel koşmak için
+    │   ├── lambdaTest              # Lambdatestte paralel koşmak için
+    │   ├── local                   # Localimizde testleri koşmak için
+    │   ├── localParallel           # Localimizde paralel koşmak için
+    │   ├── sauceLabs               # Saucelabste paralel koşmak için
+    │   └── wdio.shared.conf.js     # Genel configurasyonlarımız
+    ├── src                         
+    │   ├── common                  
+    │   ├── ├── ElementHelper       # Yardımcı sınıfımız
+    │   ├── features                # Testlerimizin bulunduğu klasör
+    │   ├── pages                   # POM
+    │   └── stepDefinitions         # Cucumber steplerimizin bulunduğu klasör
+    └── ...
 
 ### 💻 Tech
 
