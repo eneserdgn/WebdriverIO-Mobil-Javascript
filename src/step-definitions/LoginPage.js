@@ -1,3 +1,3 @@
 const {Given, When, Then} = require('@wdio/cucumber-framework');
-const HomePage = require("../pages/CoffeeReading");
+const HomePage = require("../pages/LoginPage");
 
