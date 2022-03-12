@@ -45,7 +45,7 @@ class CoffeeReading {
     }
 
     async clickNoButton() {
-        await ElementHelper.elementCheck(btn_No)
+        await ElementHelper.elementClick(btn_No)
     }
 
     async checkNoButtonImage() {

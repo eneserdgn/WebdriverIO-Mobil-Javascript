@@ -3,7 +3,7 @@ const wdioConf = require("../wdio.shared.conf");
 
 exports.config = merge(wdioConf.config, {
     cucumberOpts: {
-        tagExpression: '@CoffeeReading and @Modal',
+        tagExpression: '',
         timeout: 120000,
     },
     waitforTimeout: 40000,
