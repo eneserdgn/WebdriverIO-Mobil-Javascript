@@ -22,28 +22,20 @@
 │   └── stepDefinitions         # Cucumber steplerimizin bulunduğu klasör
 └── ...
 
-### 💻 Topics
+### 💻 Tech
 
-We reviewed topics like:
-
-- [x] Mocha Structure
-- [x] Locators
-- [x] First Test: Async/Await first commands
-- [x] Page Object Model
-- [x] Allure-reporter integrated
-- [x] Selenium-standalone-service
-* [Javascript]
-* [WebdriverIO]
-* [Cucumber]
-* [POM]
-* [Customize Helper Class]
-* [Customize Log]
-* [Allure Report]
-* [Local Parallelization]
-* [Cloud Paralelization]
-* [Browserstack]
-* [Saucelabs]
-* [Lambdatest]
+- [x] Javascript
+- [x] WebdriverIO
+- [x] Cucumber
+- [x] POM
+- [x] Customize Helper Class
+- [x] Customize Log
+- [x] Allure Report
+- [x] Local Parallelization
+- [x] Cloud Paralelization
+- [x] Browserstack
+- [x] Saucelabs
+- [x] Lambdatest
 
 - ## 💻 Pre-requisites
 
