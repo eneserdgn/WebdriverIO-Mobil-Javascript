@@ -1,6 +1,7 @@
 @CoffeeReading
 Feature: Coffee Reading
 
+  @Modal
   Scenario Outline: Faladdin should see Components on the Coffee Reading Modal
     Given Faladdin is on the Home Page
     When Faladdin taps to Tv Title: "<productTitle>" on the HomePage
@@ -14,16 +15,19 @@ Feature: Coffee Reading
       | productTitle   | modalMessage                | yesButton | noButton |
       | Coffee Reading | Do you have Turkish Coffee? | Yes       | No       |
 
+  @Close
   Scenario: Faladdin taps Close Button on the Coffee Reading Modal
     Given Faladdin is on the Coffee Reading Modal
     When Faladdin taps to Close Button on the Coffee Reading Modal
     Then Faladdin should see the Home Page
 
+  @PhoneBack
   Scenario: Faladdin taps Phone Back on the Coffee Reading Modal
     Given Faladdin is on the Coffee Reading Modal
     When Faladdin taps to Phone Back
     Then Faladdin should see the Home Page
 
+  @YesModal @Components
   Scenario Outline: Faladdin should see Components on the Coffee Reading Yes Modal
     Given Faladdin is on the Coffee Reading Modal
     When Faladdin taps to Yes Button on the Coffee Reading Modal
@@ -35,16 +39,19 @@ Feature: Coffee Reading
       | description                               | cardOpenGalary | cardOpenCamera |
       | Please choose a way to upload your photos | Open Gallery   | Open Camera    |
 
+  @YesModal @Close
   Scenario: Faladdin taps Close Button on the Coffee Reading Yes Modal
     Given Faladdin is on the Coffee Reading Yes Modal
     When Faladdin taps to Close Button on the Coffee Reading Yes Modal
     Then Faladdin should see Coffee Reading Modal
 
+  @YesModal @PhoneBack
   Scenario: Faladdin taps Phone Back on the Coffee Reading Yes Modal
     Given Faladdin is on the Coffee Reading Yes Modal
     When Faladdin taps to Phone Back
     Then Faladdin should see Coffee Reading Modal
 
+  @NoModal @Components
   Scenario Outline: Faladdin should see Components on the Coffee Reading No Page
     Given Faladdin is on the Coffee Reading Modal
     When Faladdin taps to No Button on the Coffee Reading Modal
@@ -59,16 +66,19 @@ Feature: Coffee Reading
       | description                | button   |
       | Let Faladdin drink for you | Continue |
 
+  @NoModal @Close
   Scenario: Faladdin taps Close Button on the Coffee Reading No Page
     Given Faladdin is on the Coffee Reading No Page
     When Faladdin taps to Back Button on the Coffee Reading No Page
     Then Faladdin should see the Home Page
 
+  @NoModal @PhoneBack
   Scenario: Faladdin taps Phone Back on the Coffee Reading No Page
     Given Faladdin is on the Coffee Reading Yes Modal
     When Faladdin taps to Phone Back
     Then Faladdin should see the Home Page
 
+  @DirectedLogin
   Scenario: Faladdin should see Login Page via the Coffee Reading No Page
     Given Faladdin is on the Coffee Reading No Page
     When Faladdin taps to Continue Button on the Coffee Reading No Page
