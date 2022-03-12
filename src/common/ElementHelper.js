@@ -2,6 +2,17 @@ const expect = require("chai").expect;
 
 class ElementHelper {
 
+
+    async waitOpenApp(app, time) {
+        await browser.waitUntil(
+            async () => (await driver.queryAppState(app)) === 4,
+            {
+                timeout: time,
+                timeoutMsg: 'the application could not be opened in ' + time + ' seconds'
+            }
+        );
+    }
+
     async elementClick(element) {
         await this.writeConsoleInfo("elementClick adımı başladı - " + element)
         let elem = await this.findElement(element)
@@ -105,6 +116,8 @@ class ElementHelper {
             await this.writeConsoleFail("elementCheckTextEquals adımı başarısız!!")
             await expect(true, e).equal(false)
         }
+        elemText = elemText.replace(/\s/g, '')
+        text = text.replace(/\s/g, '')
         await expect(elemText).equal(text)
         await this.writeConsoleTick("elementCheckTextEquals adımı başarıyla gerçekleşti - " + elemText)
     }
@@ -192,6 +205,31 @@ class ElementHelper {
         }
         await expect(txt, "listede istediğin isimde element yok").contain(text)
         await this.writeConsoleTick("elementsClickTextEquals adımı başarıyla gerçekleşti")
+    }
+
+    async checkElementUnderElements(element1, element2, text) {
+        await this.writeConsoleInfo("elementsCheckUnderElementWithText adımı başladı - " + text)
+        let result = false
+        let txt
+        await this.findElement(element1)
+        try {
+            let elements = await $$(element1)
+            for (const el of elements) {
+                txt = await el.getText()
+                if (txt.includes(text)) {
+                    let secondEl = await el.$(element2)
+                    result = await secondEl.isExisting()
+                    await console.log(result)
+                    break
+                }
+            }
+        } catch (e) {
+            await this.writeConsoleFail("elementsCheckUnderElementWithText adımı başarısız!!")
+            await expect(true, e).contain(false)
+        }
+        await expect(txt, "listede istediğin isimde element yok").contain(text)
+        await expect(result, "liste olarak elemetleri buldu ama üsstündeki elementi bulamadı").contain(true)
+        await this.writeConsoleTick("elementsCheckUnderElementWithText adımı başarıyla gerçekleşti")
     }
 
     async elementsCheckUnderElementWithText(element1, element2, text) {
@@ -336,12 +374,8 @@ class ElementHelper {
         await console.log('\u001b[' + 31 + 'm' + '                ✖ ' + text + '\u001b[0m')
     }
 
-    async elementClickPhoneBack(element) {
-        if (browser.isAndroid) {
-            await driver.back()
-        } else {
-            await this.elementClick(element)
-        }
+    async phoneBack() {
+        await driver.back()
     }
 
 }

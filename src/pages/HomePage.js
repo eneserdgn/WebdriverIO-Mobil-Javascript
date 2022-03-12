@@ -4,7 +4,7 @@ const logo_Faladdin = browser.isAndroid ? `android=new UiSelector().resourceId("
 const logo_Credit = browser.isAndroid ? `android=new UiSelector().resourceId("com.faladdin.app:id/imageBtnCredit")` : `-ios predicate string: name CONTAINS 'dashboard-main-page-title'`
 const text_Credit = browser.isAndroid ? `android=new UiSelector().resourceId("com.faladdin.app:id/tvCreditCount")` : `-ios predicate string: name CONTAINS 'dashboard-main-page-title'`
 const logo_Login = browser.isAndroid ? `android=new UiSelector().resourceId("com.faladdin.app:id/rlAccount")` : `-ios predicate string: name CONTAINS 'dashboard-main-page-title'`
-const txt_ProductTitle = browser.isAndroid ? `android=new UiSelector().resourceId("com.faladdin.app:id/imageBtnCredit")` : `-ios predicate string: name CONTAINS 'dashboard-main-page-title'`
+const txt_ProductTitle = browser.isAndroid ? `android=new UiSelector().resourceId("com.faladdin.app:id/tvProductTitle")` : `-ios predicate string: name CONTAINS 'dashboard-main-page-title'`
 const txt_HoroscopeTvTitle = browser.isAndroid ? `android=new UiSelector().resourceId("com.faladdin.app:id/tvTitle")` : `-ios predicate string: name CONTAINS 'dashboard-main-page-title'`
 const txt_HoroscopeTvDate = browser.isAndroid ? `android=new UiSelector().resourceId("com.faladdin.app:id/tvDate")` : `-ios predicate string: name CONTAINS 'dashboard-main-page-title'`
 const txt_HoroscopeTvReadMore = browser.isAndroid ? `android=new UiSelector().resourceId("com.faladdin.app:id/tvReadMore")` : `-ios predicate string: name CONTAINS 'dashboard-main-page-title'`
@@ -48,7 +48,7 @@ class HomePage {
         await ElementHelper.elementsCheckTextContains(txt_TvTitleOver, text)
     }
 
-    async clickTvTitleOver(text) {
+    async clickTvTitle(text) {
         await ElementHelper.elementsClickTextEquals(txt_TvTitleOver, text)
     }
 
@@ -60,7 +60,7 @@ class HomePage {
         await ElementHelper.elementCheckTextEquals(txt_HoroscopeTvTitle, text)
     }
 
-    async clickHoroscoperTvTilte(text) {
+    async clickHoroscopeTvTitle(text) {
         await ElementHelper.elementsClickTextEquals(txt_HoroscopeTvTitle, text)
     }
 
@@ -70,6 +70,10 @@ class HomePage {
 
     async checkHoroscopeTvReadMore(text) {
         await ElementHelper.elementCheckTextEquals(txt_HoroscopeTvReadMore, text)
+    }
+
+    async clickHoroscopeTvReadMore() {
+        await ElementHelper.elementClick(txt_HoroscopeTvReadMore)
     }
 
     async checkSelectedNavigationButton(text) {
