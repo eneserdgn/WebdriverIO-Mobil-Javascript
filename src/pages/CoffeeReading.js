@@ -1,92 +1,124 @@
 const ElementHelper = require('../common/ElementHelper')
 
-const logo_Faladdin = browser.isAndroid ? `android=new UiSelector().resourceId("com.faladdin.app:id/imgViewHeader")` : `-ios predicate string: name CONTAINS 'dashboard-main-page-title'`
-const logo_Credit = browser.isAndroid ? `android=new UiSelector().resourceId("com.faladdin.app:id/imageBtnCredit")` : `-ios predicate string: name CONTAINS 'dashboard-main-page-title'`
-const text_Credit = browser.isAndroid ? `android=new UiSelector().resourceId("com.faladdin.app:id/tvCreditCount")` : `-ios predicate string: name CONTAINS 'dashboard-main-page-title'`
-const logo_Login = browser.isAndroid ? `android=new UiSelector().resourceId("com.faladdin.app:id/rlAccount")` : `-ios predicate string: name CONTAINS 'dashboard-main-page-title'`
-const txt_ProductTitle = browser.isAndroid ? `android=new UiSelector().resourceId("com.faladdin.app:id/imageBtnCredit")` : `-ios predicate string: name CONTAINS 'dashboard-main-page-title'`
-const txt_HoroscopeTvTitle = browser.isAndroid ? `android=new UiSelector().resourceId("com.faladdin.app:id/tvTitle")` : `-ios predicate string: name CONTAINS 'dashboard-main-page-title'`
-const txt_HoroscopeTvDate = browser.isAndroid ? `android=new UiSelector().resourceId("com.faladdin.app:id/tvDate")` : `-ios predicate string: name CONTAINS 'dashboard-main-page-title'`
-const txt_HoroscopeTvReadMore = browser.isAndroid ? `android=new UiSelector().resourceId("com.faladdin.app:id/tvReadMore")` : `-ios predicate string: name CONTAINS 'dashboard-main-page-title'`
-const txt_TvTitleOver = browser.isAndroid ? `android=new UiSelector().resourceId("com.faladdin.app:id/tvTitleOver")` : `-ios predicate string: name CONTAINS 'dashboard-main-page-title'`
-const txt_TvDailyUse = browser.isAndroid ? `android=new UiSelector().resourceId("com.faladdin.app:id/tvDailyUse")` : `-ios predicate string: name CONTAINS 'dashboard-main-page-title'`
-const txt_SelectedLabel = browser.isAndroid ? `android=new UiSelector().resourceId("com.faladdin.app:id/largeLabel")` : `-ios predicate string: name CONTAINS 'dashboard-main-page-title'`
-const txt_UnselectedLabel = browser.isAndroid ? `android=new UiSelector().resourceId("com.faladdin.app:id/smallLabel")` : `-ios predicate string: name CONTAINS 'dashboard-main-page-title'`
-const txt_Labels = browser.isAndroid ? `android=new UiSelector().resourceId("com.faladdin.app:id/labelGroup").childSelector(new UiSelector().className(android.widget.TextView).index(0))` : `-ios predicate string: name CONTAINS 'dashboard-main-page-title'`
+const txt_Description = browser.isAndroid ? `android=new UiSelector().resourceId("com.faladdin.app:id/tvCoffee")` : `-ios predicate string: name CONTAINS 'dashboard-main-page-title'`
+const btn_Yes = browser.isAndroid ? `android=new UiSelector().resourceId("com.faladdin.app:id/btnCoffee")` : `-ios predicate string: name CONTAINS 'dashboard-main-page-title'`
+const image_Yes = browser.isAndroid ? `android=new UiSelector().resourceId("com.faladdin.app:id/imgViewCoffee")` : `-ios predicate string: name CONTAINS 'dashboard-main-page-title'`
+const btn_No = browser.isAndroid ? `android=new UiSelector().resourceId("com.faladdin.app:id/btnDrinkForMe")` : `-ios predicate string: name CONTAINS 'dashboard-main-page-title'`
+const image_No = browser.isAndroid ? `android=new UiSelector().resourceId("com.faladdin.app:id/imgViewDrinkForMe")` : `-ios predicate string: name CONTAINS 'dashboard-main-page-title'`
+const btn_Close = browser.isAndroid ? `android=new UiSelector().resourceId("com.faladdin.app:id/imgClose")` : `-ios predicate string: name CONTAINS 'dashboard-main-page-title'`
+const txt_DescriptionYesModal = browser.isAndroid ? `android=new UiSelector().resourceId("com.faladdin.app:id/tvHeader")` : `-ios predicate string: name CONTAINS 'dashboard-main-page-title'`
+const txt_CardYesModal = browser.isAndroid ? `android=new UiSelector().className("android.widget.TextView")` : `-ios predicate string: name CONTAINS 'dashboard-main-page-title'`
+const btn_CloseYesModal = browser.isAndroid ? `android=new UiSelector().resourceId("com.faladdin.app:id/imgBack")` : `-ios predicate string: name CONTAINS 'dashboard-main-page-title'`
+const txt_DescriptionNoModal = browser.isAndroid ? `android=new UiSelector().resourceId("com.faladdin.app:id/textViewTitle")` : `-ios predicate string: name CONTAINS 'dashboard-main-page-title'`
+const video_NoModal = browser.isAndroid ? `android=new UiSelector().resourceId("com.faladdin.app:id/videoView")` : `-ios predicate string: name CONTAINS 'dashboard-main-page-title'`
+const btn_ContinueNoModal = browser.isAndroid ? `android=new UiSelector().resourceId("com.faladdin.app:id/btnContinue")` : `-ios predicate string: name CONTAINS 'dashboard-main-page-title'`
+const btn_BackNoModal = browser.isAndroid ? `android=new UiSelector().resourceId("com.faladdin.app:id/imgBtnBack")` : `-ios predicate string: name CONTAINS 'dashboard-main-page-title'`
+const image_OneNoModal = browser.isAndroid ? `android=new UiSelector().resourceId("com.faladdin.app:id/imageViewOne")` : `-ios predicate string: name CONTAINS 'dashboard-main-page-title'`
+const image_TwoNoModal = browser.isAndroid ? `android=new UiSelector().resourceId("com.faladdin.app:id/imageViewTwo")` : `-ios predicate string: name CONTAINS 'dashboard-main-page-title'`
+const image_ThreeNoModal = browser.isAndroid ? `android=new UiSelector().resourceId("com.faladdin.app:id/imageViewThree")` : `-ios predicate string: name CONTAINS 'dashboard-main-page-title'`
 
 
-class HomePage {
-    async checkLogo() {
-        await ElementHelper.elementCheck(logo_Faladdin)
+
+class CoffeeReading {
+    async checkModalDescription() {
+        await ElementHelper.elementCheck(txt_Description)
     }
 
-    async checkCreditLogo() {
-        await ElementHelper.elementCheck(logo_Credit)
+    async checkModalDescriptionText(text) {
+        await ElementHelper.elementCheckTextEquals(txt_Description, text)
     }
 
-    async checkCreditText(text) {
-        await ElementHelper.elementCheckTextEquals(text_Credit, text)
+    async checkYesButton(text) {
+        await ElementHelper.elementCheckTextEquals(btn_Yes, text)
     }
 
-    async clickCredit() {
-        await ElementHelper.elementClick(logo_Credit)
+    async clickYesButton() {
+        await ElementHelper.elementClick(btn_Yes)
     }
 
-    async checkLoginLogo() {
-        await ElementHelper.elementCheck(logo_Login)
+    async checkYesButtonImage() {
+        await ElementHelper.elementClick(image_Yes)
     }
 
-    async clickLoginLogo() {
-        await ElementHelper.elementClick(logo_Login)
+    async checkNoButton(text) {
+        await ElementHelper.elementCheckTextEquals(btn_No, text)
     }
 
-    async checkProductTitle(text) {
-        await ElementHelper.elementsCheckTextContains(txt_ProductTitle, text)
+    async clickNoButton() {
+        await ElementHelper.elementClick(btn_No)
     }
 
-    async checkTvTitleOver(text) {
-        await ElementHelper.elementsCheckTextContains(txt_TvTitleOver, text)
+    async checkNoButtonImage() {
+        await ElementHelper.elementCheck(image_No)
     }
 
-    async clickTvTitleOver(text) {
-        await ElementHelper.elementsClickTextEquals(txt_TvTitleOver, text)
+    async checkCloseButton() {
+        await ElementHelper.elementCheck(btn_Close)
     }
 
-    async checkTvDailyUse(text) {
-        await ElementHelper.elementsCheckTextContains(txt_TvDailyUse, text)
+    async clickCloseButton() {
+        await ElementHelper.elementClick(btn_Close)
     }
 
-    async checkHoroscopeTvTitle(text) {
-        await ElementHelper.elementCheckTextEquals(txt_HoroscopeTvTitle, text)
+    async checkDescriptionYesModal() {
+        await ElementHelper.elementCheck(txt_DescriptionYesModal)
     }
 
-    async clickHoroscoperTvTilte(text) {
-        await ElementHelper.elementsClickTextEquals(txt_HoroscopeTvTitle, text)
+    async checkDescriptionTextYesModal(text) {
+        await ElementHelper.elementCheckTextEquals(txt_DescriptionYesModal, text)
     }
 
-    async checkHoroscopeTvDate(text) {
-        await ElementHelper.elementCheckTextEquals(txt_HoroscopeTvDate, text)
+    async checkCardYesModal(text) {
+        await ElementHelper.elementsCheckTextContains(txt_CardYesModal, text)
     }
 
-    async checkHoroscopeTvReadMore(text) {
-        await ElementHelper.elementCheckTextEquals(txt_HoroscopeTvReadMore, text)
+    async checkCloseButtonYesModal() {
+        await ElementHelper.elementCheck(btn_CloseYesModal)
     }
 
-    async checkSelectedNavigationButton(text) {
-        await ElementHelper.elementsCheckTextContains(txt_SelectedLabel, text)
+    async clickCloseButtonYesModal() {
+        await ElementHelper.elementClick(btn_CloseYesModal)
     }
 
-    async checkUnSelectedNavigationButton(text) {
-        await ElementHelper.elementsCheckTextContains(txt_UnselectedLabel, text)
+    async checkDescriptionNoModal() {
+        await ElementHelper.elementCheck(txt_DescriptionNoModal)
     }
 
-    async checkNavigationButton(text) {
-        await ElementHelper.elementsCheckTextContains(txt_Labels, text)
+    async checkDescriptionTextNoModal(text) {
+        await ElementHelper.elementCheckTextEquals(txt_DescriptionNoModal, text)
     }
 
-    async clickNavigationButton(text) {
-        await ElementHelper.elementsClickTextEquals(txt_Labels, text)
+    async checkImageOneNoModal() {
+        await ElementHelper.elementCheck(image_OneNoModal)
+    }
+
+    async checkImageTwoNoModal() {
+        await ElementHelper.elementCheck(image_TwoNoModal)
+    }
+
+    async checkImageThreeNoModal() {
+        await ElementHelper.elementCheck(image_ThreeNoModal)
+    }
+
+    async checkVideoViewNoModal() {
+        await ElementHelper.elementCheck(video_NoModal)
+    }
+
+    async checkContinueButtonNoModal(text) {
+        await ElementHelper.elementCheckTextEquals(btn_ContinueNoModal, text)
+    }
+
+    async clickContinueButtonNoModal() {
+        await ElementHelper.elementClick(btn_ContinueNoModal)
+    }
+
+    async checkBackButtonNoModal() {
+        await ElementHelper.elementCheck(btn_BackNoModal)
+    }
+
+    async clickBackButtonNoModal() {
+        await ElementHelper.elementClick(btn_BackNoModal)
     }
 }
 
-module.exports = new HomePage();
+module.exports = new CoffeeReading();
