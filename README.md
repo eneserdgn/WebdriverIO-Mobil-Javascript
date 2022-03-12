@@ -6,20 +6,20 @@
 ### 💻 Project Tree
 
     .
-    ├── allure-report               # index.html dosyası ile Raporu görüntülüyoruz
+    ├── allure-report               # index.html for viewing report
     ├── config                      
-    │   ├── browserStack            # BrowserStackte paralel koşmak için
-    │   ├── lambdaTest              # Lambdatestte paralel koşmak için
-    │   ├── local                   # Localimizde testleri koşmak için
-    │   ├── localParallel           # Localimizde paralel koşmak için
-    │   ├── sauceLabs               # Saucelabste paralel koşmak için
-    │   └── wdio.shared.conf.js     # Genel configurasyonlarımız
+    │   ├── browserStack            # to run in parallel on BrowserStack
+    │   ├── lambdaTest              # to run in parallel on Lambdatest
+    │   ├── local                   # to run on Local
+    │   ├── localParallel           # to run in parallel on Local
+    │   ├── sauceLabs               # to run in parallel on Saucelabs
+    │   └── wdio.shared.conf.js     # General conf
     ├── src                         
     │   ├── common                  
-    │   ├── ├── ElementHelper       # Yardımcı sınıfımız
-    │   ├── features                # Testlerimizin bulunduğu klasör
+    │   ├── ├── ElementHelper       # Helper Class
+    │   ├── features                # Tests are located
     │   ├── pages                   # POM
-    │   └── stepDefinitions         # Cucumber steplerimizin bulunduğu klasör
+    │   └── stepDefinitions         # Cucumber Steps
     └── ...
 
 ### 💻 Tech
