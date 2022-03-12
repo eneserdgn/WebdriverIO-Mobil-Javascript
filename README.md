@@ -4,7 +4,7 @@
 
 
 ### 💻 Project Tree
-.
+
 .
 ├── allure-report               # index.html dosyası ile Raporu görüntülüyoruz
 ├── config                      
