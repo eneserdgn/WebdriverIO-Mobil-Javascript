@@ -283,15 +283,7 @@ class ElementHelper {
         let windowHeight = (await browser.getWindowSize()).height
         try {
             await $(element).waitForDisplayed()
-            let elementHeight = (await $(element).getLocation()).y
-            if (elementHeight > windowHeight * 4 / 5) {
-                await this.scrollDown()
-                await this.writeConsoleChildMethodTick("FindElement adımı başarılı")
-                return await $(element)
-            } else {
-                await this.writeConsoleChildMethodTick("FindElement adımı başarılı")
-                return await $(element)
-            }
+            return $(element)
         } catch (e) {
             if (browser.isAndroid) {
                 let scroll = "android=new UiScrollable(new UiSelector().scrollable(true)).flingToBeginning(3)"
